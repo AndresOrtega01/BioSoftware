@@ -14,12 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('aves', function (Blueprint $table) {
-            $table->increments('ave_id');
+            $table->increments('id');
             $table->string('nombre_comun');
             $table->string('nombre_cientifico');
-            $table->string('imagen');
-            $table->string('link_info');
-            $table->string('link_history');
+            $table->string('imagen')->nullable();
+            $table->string('link_info')->nullable();
+            $table->string('link_history')->nullable();
             $table->timestamps();
         });
     }

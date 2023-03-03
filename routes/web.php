@@ -24,7 +24,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword; 
-use App\Http\Controllers\AveController; 
+use App\Http\Controllers\AveController;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\AvistamientoController; 
 
             
 
@@ -54,8 +56,10 @@ Route::group(['middleware' => 'auth'], function () {
 	
 });
 
-Route::get('/aves', [AveController::class, 'index'])->middleware('guest')->name('aves');
-Route::get('/aves/create', [AveController::class, 'create'])->middleware('guest')->name('aves-create');
-Route::get('/aves', [AveController::class, ''])->middleware('guest')->name('aves');
-Route::post('/aves', [AveController::class, ''])->middleware('guest')->name('sendData');
+// Route::get('/aves', [AveController::class, 'index'])->middleware('guest')->name('aves');
+// Route::get('/aves/create', [AveController::class, 'create'])->middleware('guest')->name('aves-create');
+// Route::get('/aves', [AveController::class, ''])->middleware('guest')->name('aves');
+// Route::post('/aves', [AveController::class, ''])->middleware('guest')->name('sendData');
 
+Route::get('/aves', [App\Http\Controllers\AveController::class, 'index'])->name('aves.index');
+Route::get('/aves/create', [App\Http\Controllers\AveController::class, 'create'])->name('aves.create');

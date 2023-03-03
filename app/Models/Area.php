@@ -7,8 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Area extends Model
 {
-    public function aves(){
-        return $this->belongsToMany(Ave::class);
-    }
     use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+        'ubicacion',
+    ];
+
+    public function avistamientos()
+    {
+        return $this->hasMany(Avistamiento::class);
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use App\Models\Ave;
 use App\Models\Area;
 
@@ -8,18 +9,23 @@ use Illuminate\Http\Request;
 
 class AveController extends Controller
 {
-    // public function agregarAve($area_id){
-    //     $area = Area::find($area_id);
-    //     $ave = Ave::create([
-    //         'nombre' => 'Nombre del ave',
-    //         'especie' => 'Especie del ave'
-    //     ]);
-    //     $area->aves()->attach($ave);
-    //     return redirect()->back()->with('success', 'Ave agregada correctamente');
-    // }
-
-    public function create()
+    public function index()
     {
-        return view("pages.create");
+        // $aves = Ave::all();
+        // ['aves' => $aves]
+        return view('aves.index');
     }
+    public function mostrarDatosAve($id_ave)
+    {
+        $ave = DB::table('aves')->where('id', $id_ave)->first();
+        $avistamientos = DB::table('avistamientos')
+                            ->where('id_ave', $id_ave)
+                            ->join('areas', 'avistamientos.id_area', '=', 'areas.id')
+                            ->select('areas.nombre', 'avistamientos.cantidad')
+                            ->get();
+
+        return view('datos_ave', ['ave' => $ave, 'avistamientos' => $avistamientos]);
+    }
+
+    
 }

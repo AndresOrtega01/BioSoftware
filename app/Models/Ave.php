@@ -7,9 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ave extends Model
 {
-    public function areas(){
-        return $this->belongsToMany(Area::class);
-    }
     use HasFactory;
+
+    protected $fillable = [
+        'nombre_cientifico',
+        'nombre_comun',
+        'imagen',
+        'link_history',
+        'link_info',
+    ];
+
+    public function avistamientos()
+    {
+        return $this->hasMany(Avistamiento::class);
+    }
+    
+    
 }
 

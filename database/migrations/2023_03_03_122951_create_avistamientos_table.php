@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('aves_areas', function (Blueprint $table) {
+        Schema::create('avistamientos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ave_id')->constrained();
-            $table->foreignId('area_id')->constrained();
+            $table->unsignedBigInteger('area_id');
+            $table->unsignedBigInteger('ave_id');
+            $table->unsignedSmallInteger('cantidad');
             $table->timestamps();
+
+            $table->foreign('area_id')->references('id')->on('areas');
+            $table->foreign('ave_id')->references('id')->on('aves');
+
         });
     }
 
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('avistamientos');
     }
 };
