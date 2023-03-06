@@ -56,10 +56,10 @@ Route::group(['middleware' => 'auth'], function () {
 	
 });
 
-// Route::get('/aves', [AveController::class, 'index'])->middleware('guest')->name('aves');
-// Route::get('/aves/create', [AveController::class, 'create'])->middleware('guest')->name('aves-create');
-// Route::get('/aves', [AveController::class, ''])->middleware('guest')->name('aves');
-// Route::post('/aves', [AveController::class, ''])->middleware('guest')->name('sendData');
 
-Route::get('/aves', [App\Http\Controllers\AveController::class, 'index'])->name('aves.index');
-Route::get('/aves/create', [App\Http\Controllers\AveController::class, 'create'])->name('aves.create');
+
+Route::get('/aves/create', [AveController::class, 'create'])->name('aves.create');
+// Route::get('/aves/create', [App\Http\Controllers\AveController::class, 'create'])->name('aves.create');
+
+// Route::get('/aves', 'AveController@index')->name('aves.index');
+Route::post('/aves/create', [AveController::class, 'store'])->name('aves.store');

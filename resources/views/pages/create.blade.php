@@ -1,7 +1,6 @@
 @extends('layouts.app', ['class' => 'g-sidenav-show bg-gray-100'])
-
 @section('content')
-    @include('layouts.navbars.auth.topnav', ['title' => 'Tables'])
+    @include('layouts.navbars.auth.topnav', ['title' => 'Aves'])
     <div class="container-fluid py-4">
         <div class="row mt-4">
           <div class="col-lg-4">
@@ -41,52 +40,6 @@
                   </div>
               </div>
               <h5 class="font-weight-bolder mt-4">Area de observación</h5>
-              <!-- <div class="row mt-3">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Vivero</label>
-                    <input class="form-control" type="text" value="New York" onfocus="focused(this)" onfocusout="defocused(this)">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Vivero</label>
-                    <input class="form-control" type="text" value="New York" onfocus="focused(this)" onfocusout="defocused(this)">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Antropica</label>
-                    <input class="form-control" type="text" value="United States" onfocus="focused(this)" onfocusout="defocused(this)">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Cultivo</label>
-                    <input class="form-control" type="text" value="437300" onfocus="focused(this)" onfocusout="defocused(this)">
-                  </div>
-                </div>
-              </div>
-              <div class="row mt-2">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Vivero</label>
-                    <input class="form-control" type="text" value="New York" onfocus="focused(this)" onfocusout="defocused(this)">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Vivero</label>
-                    <input class="form-control" type="text" value="New York" onfocus="focused(this)" onfocusout="defocused(this)">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Antropica</label>
-                    <input class="form-control" type="text" value="United States" onfocus="focused(this)" onfocusout="defocused(this)">
-                  </div>
-                </div>
-              </div> -->
               <div class="row">
                 <div class="col-3">
                   <label class="mt-2">Antropica</label>

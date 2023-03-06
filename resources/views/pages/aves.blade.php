@@ -1,5 +1,4 @@
 @extends('layouts.app', ['class' => 'g-sidenav-show bg-gray-100'])
-
 @section('content')
     @include('layouts.navbars.auth.topnav', ['title' => 'Aves'])
     <div class="container-fluid py-4">
@@ -9,10 +8,10 @@
             <div class="card-header pb-4">
                 <div class="row ">
                   <div class="col-6 d-flex align-items-center">
-                    <h6 class="mb-0">Payment Method</h6>
+                    <h6 class="mb-0">listas de aves</h6>
                   </div>
                   <div class="col-6 text-end">
-                  <a class="btn btn-success mb-0 {{ str_contains(request()->url(), 'creates') == true ? 'active' : '' }}" href="{{ route('page', ['page' => 'creates']) }}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Agregar Nueva Ave</a>
+                  <a class="btn btn-success mb-0" href="{{ route('aves.create') }}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Agregar Nueva Ave</a>
                   </div>
                 </div>
             </div>
